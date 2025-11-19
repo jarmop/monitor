@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchProcessStatuses } from "../api.ts";
 import { Status } from "./types.ts";
 import { ProcessTable } from "./ProcessTable.tsx";
+import { ProcessTree } from "./ProcessTree.tsx";
 
 export function Processes() {
   const [statuses, setStatuses] = useState<Status[]>([]);
@@ -28,7 +29,8 @@ export function Processes() {
   return (
     <>
       <h1>Processes</h1>
-      <ProcessTable statuses={statuses} />
+      {/* <ProcessTable statuses={statuses} /> */}
+      <ProcessTree processes={statuses} />
     </>
   );
 }
